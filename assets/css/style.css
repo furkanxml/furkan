@@ -533,14 +533,15 @@ img {
         font-size: 1.1rem;
     }
 
-    /* Tawk.to baloncuğunu mobilde nav bar içindeki 6. slotun (İletişim) merkezine hizala */
-    iframe[title="chat widget"],
-    .tawk-min-container,
-    div[id^="tawk-"] {
-        bottom: calc(env(safe-area-inset-bottom, 0px) + 12px) !important;
-        right: calc(8.33% - 30px) !important;
-        transform: scale(0.75) !important;
-        transform-origin: center !important;
+    /* Orijinal Tawk.to baloncuğunu 6. slotun (İletişim) İKON boşluğuna tam oturt */
+    iframe[title="chat widget"] {
+        position: fixed !important;
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 16px) !important;
+        right: calc(8.33% - 25px) !important;
+        transform: scale(0.45) !important; /* Diğer ikonlarla (32px) aynı boyuta getir */
+        transform-origin: center center !important;
+        margin: 0 !important;
+        z-index: 10000 !important;
     }
 }
 
