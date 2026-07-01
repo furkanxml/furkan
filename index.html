@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furkan Hasan Osmanoğlu - Portfolyo | Yazılım Geliştirici</title>
+
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self' blob:;
+    img-src 'self' data: https:;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.tawk.to;
+    font-src 'self' data: https://fonts.gstatic.com https://*.tawk.to;
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://embed.tawk.to https://*.tawk.to;
+    connect-src 'self' https://region1.google-analytics.com https://www.google-analytics.com https://vitals.vercel-insights.com https://embed.tawk.to https://*.tawk.to wss://*.tawk.to;
+    frame-src 'self' https://embed.tawk.to https://*.tawk.to blob:;
+    object-src blob: 'self';
+    base-uri 'self';
+    upgrade-insecure-requests
+    ">
+
+    <link rel="preconnect" href="https://embed.tawk.to">
+    <link rel="dns-prefetch" href="https://embed.tawk.to">
+
+    <!-- Temel SEO Etiketleri -->
+    <meta name="description"
+        content="Yazılım Geliştirici Furkan Hasan Osmanoğlu'nun kişisel portfolyo sitesi. Projeler, yetenekler, sertifikalar ve yazılım geliştirme.">
+    <meta name="keywords"
+        content="Furkan Hasan Osmanoğlu, yazılım geliştirici, software developer, web geliştirme, portfolyo, projeler">
+    <meta name="author" content="Furkan Hasan Osmanoğlu">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="tr">
+    <link rel="canonical" href="https://furkanhasan.com">
+
+    <!-- Open Graph / Sosyal Medya Etiketleri -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://furkanhasan.com">
+    <meta property="og:title" content="Furkan Hasan Osmanoğlu - Portfolyo | Yazılım Geliştirici">
+    <meta property="og:description"
+        content="Yazılım Geliştirici Furkan Hasan Osmanoğlu'nun kişisel portfolyo sitesi. Projeler, yetenekler ve deneyimler.">
+    <meta property="og:image" content="https://furkanhasan.com/image/furkanhasan.png">
+    <meta property="og:site_name" content="Furkan Hasan Osmanoğlu Portfolyo">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter Card Etiketleri -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Furkan Hasan Osmanoğlu - Portfolyo | Yazılım Geliştirici">
+    <meta name="twitter:description"
+        content="Yazılım Geliştirici Furkan Hasan Osmanoğlu'nun kişisel portfolyo sitesi. Projeler, yetenekler ve deneyimler.">
+    <meta name="twitter:image" content="https://furkanhasan.com/image/furkanhasan.png">
+
+    <!-- Yapısal Veri (Google'da zengin sonuçlar için JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Furkan Hasan Osmanoğlu",
+      "jobTitle": "Yazılım Geliştirici",
+      "description": "Yazılım Geliştirici Furkan Hasan Osmanoğlu'nun kişisel portfolyo sitesi.",
+      "url": "https://furkanhasan.com",
+      "knowsAbout": ["Web Geliştirme", "Yazılım Mühendisliği"],
+      "sameAs": [
+        "https://linkedin.com/in/furkanhasanosmanoglu",
+        "https://github.com/"
+      ]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FVFVPS6N0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8FVFVPS6N0');
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="image/furkanhasan.ico" type="image/svg+xml">
+    <!-- Bootstrap 5 CSS -->
+    <link href="assets/css/odlmin.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="assets/css/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="assets/css/google-fonts.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="assets/css/aos.css" rel="stylesheet">
+    <!-- Devicon Icons -->
+    <link rel="stylesheet" type="text/css" href="assets/css/devicon.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <header id="main-header">
+        <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#anasayfa" id="nav-logo">
+                    <span class="logo-bracket">&lt;</span>FurkanHasan<span class="logo-bracket">/&gt;</span>
+
+                </a>
+
+                <!-- Navigation Links - Desktop -->
+                <div class="nav-links-wrapper d-none d-lg-flex" id="nav-links-wrapper">
+                    <ul class="navbar-nav flex-row" id="nav-links">
+                        <li class="nav-item"><a class="nav-link active" href="#anasayfa">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#hakkimda">Hakkımda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#yetenekler">Yetenekler</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projeler">Projeler</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#sertifikalar">Sertifikalar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#iletisim">İletişim</a></li>
+                    </ul>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="header-actions" id="header-actions">
+                    <a href="assets/cv/CV.pdf" class="btn btn-cv" target="_blank" id="btn-download-cv" title="CV İndir">
+                        <i class="bi bi-file-earmark-arrow-down"></i>
+                        <span class="btn-text">CV İndir</span>
+                    </a>
+                    <a href="https://instagram.com/furkanhasan_" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-instagram" id="btn-instagram" title="Instagram">
+                        <i class="bi bi-instagram"></i>
+                        <span class="btn-text">Instagram</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/furkanhasanosmanoglu/" target="_blank"
+                        rel="noopener noreferrer" class="btn btn-linkedin" id="btn-linkedin" title="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                        <span class="btn-text">LinkedIn</span>
+                    </a>
+                    <button class="btn btn-theme-toggle" id="btn-theme-toggle" title="Tema Değiştir"
+                        aria-label="Tema değiştir">
+                        <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== MOBILE BOTTOM NAV ==================== -->
+    <nav class="mobile-bottom-nav d-lg-none">
+        <a class="nav-link active" href="#anasayfa" title="Ana Sayfa"><i class="bi bi-house-door-fill"></i></a>
+        <a class="nav-link" href="#hakkimda" title="Hakkımda"><i class="bi bi-person-fill"></i></a>
+        <a class="nav-link" href="#yetenekler" title="Yetenekler"><i class="bi bi-lightning-fill"></i></a>
+        <a class="nav-link" href="#projeler" title="Projeler"><i class="bi bi-grid-fill"></i></a>
+        <a class="nav-link" href="#sertifikalar" title="Sertifikalar"><i class="bi bi-award-fill"></i></a>
+        <a class="nav-link" href="#iletisim" title="İletişim"><i class="bi bi-envelope-fill"></i></a>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="anasayfa" class="hero-section">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center hero-min-height">
+                <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="hero-content">
+                        <p class="hero-greeting">Merhaba, Ben</p>
+                        <h1 class="hero-name" id="hero-name">
+                            <span class="name-line">Furkan Hasan Osmanoğlu</span>
+                        </h1>
+                        <div class="hero-typing-wrapper">
+                            <span class="hero-prefix">Bir&nbsp;</span>
+                            <span class="hero-typing" id="hero-typing"></span>
+                            <span class="typing-cursor">|</span>
+                        </div>
+                        <p class="hero-description">
+                            Üniversite öğrencisi ve yazılım geliştiriciyim. Modern teknolojilerle
+                            kullanıcı odaklı, performanslı ve ölçeklenebilir uygulamalar geliştiriyorum.
+                        </p>
+                        <div class="hero-cta">
+                            <a href="#projeler" class="btn btn-primary-custom" id="hero-btn-projects">
+                                <i class="bi bi-code-slash"></i> Projelerimi Gör
+                            </a>
+                            <a href="#iletisim" class="btn btn-outline-custom" id="hero-btn-contact">
+                                <i class="bi bi-envelope"></i> İletişime Geç
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="25">0</span>
+                                <span class="stat-label">Proje</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="5">0</span>
+                                <span class="stat-label">Sertifika</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left" data-aos-duration="1000"
+                    data-aos-delay="200">
+                    <div class="hero-visual">
+                        <div class="code-window">
+                            <div class="code-window-header">
+                                <div class="window-dot dot-red"></div>
+                                <div class="window-dot dot-yellow"></div>
+                                <div class="window-dot dot-green"></div>
+                                <span class="window-title">developer.js</span>
+                            </div>
+                            <div class="code-window-body">
+                                <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">ad</span>: <span class="code-string">"Furkan Hasan Osmanoğlu"</span>,
+  <span class="code-property">rol</span>: <span class="code-string">"Programmer"</span>,
+  <span class="code-property">universite</span>: <span class="code-string">"Selçuk Üniversitesi"</span>,
+  <span class="code-property">teknolojiler</span>: [
+    <span class="code-string">"JavaScript"</span>, <span class="code-string">"Python"</span>,
+    <span class="code-string">"PHP"</span>, <span class="code-string">"CSS"</span>
+    <span class="code-string">"SQL"</span>, <span class="code-string">"C#"</span>
+  ],
+  <span class="code-property">hedef</span>: <span class="code-string">"Yazılım geliştirme alanında kendimi sürekli geliştirerek,
+  yenilikçi projelerde yer almak ve değer katan çözümler üretmek."</span>,
+  <span class="code-method">kodYaz</span>: () => {
+    <span class="code-keyword">return</span> <span class="code-string">"✨Devam et!"</span>;
+  }
+};</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" id="scroll-indicator">
+            <div class="mouse">
+                <div class="mouse-wheel"></div>
+            </div>
+            <span>Aşağı Kaydır</span>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="hakkimda" class="section about-section">
+        <div class="about-bg-shapes">
+            <div class="about-light-shape"></div>
+            <div class="about-light-shape-right"></div>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hakkımda</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5">
+                    <div class="about-image-wrapper">
+                        <div class="about-image-frame">
+                            <img src="image/furkanhasan.png" alt="Hakkımda Fotoğraf" class="about-photo">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-content">
+                        <h3 class="about-subtitle">Yazılım Geliştirici & Üniversite Öğrencisi</h3>
+                        <p class="about-text">
+                            Merhaba, Selçuk Üniversites Bilgisayar Programcılığı bölümünde aktif öğreciyim. Teknolojiye
+                            olan tutkum sayesinde
+                            kendimi sürekli geliştiriyorum. Web geliştirme, veritabanı yönetimi ve daha fazla
+                            alanlarda projeler üretiyorum.
+                        </p>
+                        <p class="about-text">
+                            <br>Hedefim Ne? <br>
+                            Sürekli öğrenen, araştıran ve denemekten korkmayan bir yapım var. Şimdi ise okulda ve
+                            kişisel projelerimde edindiğim bu teorik ve pratik bilgileri, profesyonel bir ekibin parçası
+                            olarak gerçek dünya projelerinde test etmek istiyorum.
+                            Sektörde deneyim kazanabileceğim, vizyonuma katkı sağlayacak ve benim de enerjimle,
+                            kodlarımla değer katabileceğim staj veya iş fırsatları arıyorum.
+                            Geliştirdiğim projelere göz atmak için web sitemi incelemeye devam edebilir, benimle
+                            iletişime geçmek için iletişim sayfasında ki forumdan bana her zaman ulaşabilirsiniz!
+                        </p>
+                        <div class="about-info-grid">
+                            <div class="about-info-item">
+                                <i class="bi bi-mortarboard-fill"></i>
+                                <div>
+                                    <span class="info-label">Eğitim</span>
+                                    <span class="info-value">Bilgisayar Programcısı</span>
+                                </div>
+                            </div>
+                            <div class="about-info-item">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <div>
+                                    <span class="info-label">Konum</span>
+                                    <span class="info-value">İstanbul,Anadolu</span>
+                                </div>
+                            </div>
+                            <div class="about-info-item">
+                                <i class="bi bi-translate"></i>
+                                <div>
+                                    <span class="info-label">Diller</span>
+                                    <span class="info-value">Türkçe, İngilizce</span>
+                                </div>
+                            </div>
+                            <div class="about-info-item">
+                                <i class="bi bi-briefcase-fill"></i>
+                                <div>
+                                    <span class="info-label">Durum</span>
+                                    <span class="info-value">İş Arıyor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section id="yetenekler" class="section skills-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Yeteneklerim</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="skills-categories-grid">
+                <!-- Frontend -->
+                <div class="skills-category-block" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skills-category-label">
+                        <div class="skills-category-icon-wrapper">
+                            <i class="bi bi-palette-fill"></i>
+                        </div>
+                        <h3>Frontend</h3>
+                        <div class="skills-category-line"></div>
+                    </div>
+                    <div class="skills-hex-grid">
+                        <div class="skill-hex-card">
+                            <div class="skill-hex-glow"></div>
+                            <div class="skill-hex-icon"><i class="devicon-html5-plain colored"></i></div>
+                            <span class="skill-hex-name">HTML5</span>
+                        </div>
+                        <div class="skill-hex-card">
+                            <div class="skill-hex-glow"></div>
+                            <div class="skill-hex-icon"><i class="devicon-css3-plain colored"></i></div>
+                            <span class="skill-hex-name">CSS3</span>
+                        </div>
+                        <div class="skill-hex-card">
+                            <div class="skill-hex-glow"></div>
+                            <div class="skill-hex-icon"><i class="devicon-javascript-plain colored"></i></div>
+                            <span class="skill-hex-name">JavaScript</span>
+                        </div>
+                        <div class="skill-hex-card">
+                            <div class="skill-hex-glow"></div>
+                            <div class="skill-hex-icon"><i class="devicon-bootstrap-plain colored"></i></div>
+                            <span class="skill-hex-name">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend & Veritabanı -->
+                <div class="skills-category-block" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skills-category-label">
+                        <div class="skills-category-icon-wrapper backend">
+                            <i class="bi bi-server"></i>
+                        </div>
+                        <h3>Backend & Veritabanı</h3>
+                        <div class="skills-category-line"></div>
+                    </div>
+                    <div class="skills-hex-grid">
+                        <div class="skill-hex-card">
+                            <div class="skill-hex-glow"></div>
+                            <div class="skill-hex-icon"><i class="devicon-php-plain colored"></i></div>
+                            <span class="skill-hex-name">PHP</span>
+                        </div>
+                        <div class="skill-hex-card">
+                            <div class="skill-hex-glow"></div>
+                            <div class="skill-hex-icon"><i class="devicon-python-plain colored"></i></div>
+                            <span class="skill-hex-name">Python</span>
+                        </div>
+                        <div class="skill-hex-card">
+                            <div class="skill-hex-glow"></div>
+                            <div class="skill-hex-icon"><i class="devicon-csharp-plain colored"></i></div>
+                            <span class="skill-hex-name">C#</span>
+                        </div>
+                        <div class="skill-hex-card">
+                            <div class="skill-hex-glow"></div>
+                            <div class="skill-hex-icon"><i class="devicon-sqldeveloper-plain colored"></i></div>
+                            <span class="skill-hex-name">SQL</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tasarım & Video -->
+                <div class="skills-category-block skills-category-full" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skills-category-label">
+                        <div class="skills-category-icon-wrapper"
+                            style="background: linear-gradient(135deg, #ec4899, #be185d);">
+                            <i class="bi bi-camera-video-fill"></i>
+                        </div>
+                        <h3>Tasarım & Video</h3>
+                        <div class="skills-category-line"></div>
+                    </div>
+                    <div class="skills-hex-grid">
+                        <div class="skill-hex-card">
+                            <div class="skill-hex-glow"></div>
+                            <div class="skill-hex-icon">
+                                <img src="https://api.iconify.design/logos:adobe-photoshop.svg" alt="Photoshop"
+                                    style="width: 38px; height: 38px;">
+                            </div>
+                            <span class="skill-hex-name">Photoshop</span>
+                        </div>
+                        <div class="skill-hex-card">
+                            <div class="skill-hex-glow"></div>
+                            <div class="skill-hex-icon">
+                                <img src="https://api.iconify.design/logos:adobe-premiere.svg" alt="Premiere Pro"
+                                    style="width: 38px; height: 38px;">
+                            </div>
+                            <span class="skill-hex-name">Premiere Pro</span>
+                        </div>
+                        <div class="skill-hex-card">
+                            <div class="skill-hex-glow"></div>
+                            <div class="skill-hex-icon">
+                                <img src="https://api.iconify.design/logos:adobe-after-effects.svg" alt="After Effects"
+                                    style="width: 38px; height: 38px;">
+                            </div>
+                            <span class="skill-hex-name">After Effects</span>
+                        </div>
+                        <div class="skill-hex-card">
+                            <div class="skill-hex-glow"></div>
+                            <div class="skill-hex-icon">
+                                <img src="https://cdn.worldvectorlogo.com/logos/3ds-max.svg" alt="3ds Max"
+                                    style="width: 38px; height: 38px;">
+                            </div>
+                            <span class="skill-hex-name">3ds Max</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section id="projeler" class="section projects-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Projelerim</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <!-- Project Filter -->
+            <div class="project-filters" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all" id="filter-all">Tümü</button>
+                <button class="filter-btn" data-filter="web" id="filter-web">Web</button>
+                <button class="filter-btn" data-filter="mobile" id="filter-mobile">Mobil</button>
+                <button class="filter-btn" data-filter="other" id="filter-other">Diğer</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card-inner">
+                        <div class="project-image">
+                            <img src="image/avukatsitesi.png" alt="Avukat web sitesi proje gorseli"
+                                class="project-photo" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="https://245403024.infinityfreeapp.com/" class="project-link" target="_blank"
+                                    title="Canlı Demo"><i class="bi bi-box-arrow-up-right"></i></a>
+                                <a href="#" class="project-link" title="Kaynak Kodu"><i class="bi bi-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Avukatlara Özel Websitesi</h3>
+                            <p class="project-desc">Duruşma Bildirim sistemi, Blog yapısı, Tam Dinamik yapı.</p>
+                            <div class="project-tags">
+                                <span class="tag">PHP</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card-inner">
+                        <div class="project-image">
+                            <img src="image/veritasaruf.png" alt="Gorev yonetim uygulamasi proje gorseli"
+                                class="project-photo" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" title="Canlı Demo"><i
+                                        class="bi bi-box-arrow-up-right"></i></a>
+                                <a href="#" class="project-link" title="Kaynak Kodu"><i class="bi bi-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Akıllı Tasaruf Sistemi</h3>
+                            <p class="project-desc">Faturaları takip eden akıllı bir asistan.</p>
+                            <div class="project-tags">
+                                <span class="tag">PHP</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card-inner">
+                        <div class="project-image">
+                            <img src="image/kuafor.png" alt="Hava durumu uygulamasi proje gorseli" class="project-photo"
+                                loading="lazy">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" title="Canlı Demo"><i
+                                        class="bi bi-box-arrow-up-right"></i></a>
+                                <a href="#" class="project-link" title="Kaynak Kodu"><i class="bi bi-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Erkek Kuafor Websitesi</h3>
+                            <p class="project-desc">Randevu sistemi, Tam dinamik Yapı, Modern Tasarım.</p>
+                            <div class="project-tags">
+                                <span class="tag">Html,CSS</span>
+                                <span class="tag">PHP</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TECH SLIDER SECTION ==================== -->
+    <section class="tech-slider-section">
+        <div class="tech-track">
+            <div class="tech-group">
+                <div class="tech-item"><i class="devicon-html5-plain colored"></i> HTML5</div>
+                <div class="tech-item"><i class="devicon-css3-plain colored"></i> CSS3</div>
+                <div class="tech-item"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                <div class="tech-item"><i class="devicon-php-plain colored"></i> PHP</div>
+                <div class="tech-item"><i class="devicon-python-plain colored"></i> Python</div>
+                <div class="tech-item"><i class="devicon-csharp-plain colored"></i> C#</div>
+                <div class="tech-item"><i class="devicon-sqldeveloper-plain colored"></i> SQL</div>
+                <div class="tech-item"><i class="devicon-bootstrap-plain colored"></i> Bootstrap</div>
+            </div>
+
+            <div class="tech-group" aria-hidden="true">
+                <div class="tech-item"><i class="devicon-html5-plain colored"></i> HTML5</div>
+                <div class="tech-item"><i class="devicon-css3-plain colored"></i> CSS3</div>
+                <div class="tech-item"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                <div class="tech-item"><i class="devicon-php-plain colored"></i> PHP</div>
+                <div class="tech-item"><i class="devicon-python-plain colored"></i> Python</div>
+                <div class="tech-item"><i class="devicon-csharp-plain colored"></i> C#</div>
+                <div class="tech-item"><i class="devicon-sqldeveloper-plain colored"></i> SQL</div>
+                <div class="tech-item"><i class="devicon-bootstrap-plain colored"></i> Bootstrap</div>
+            </div>
+
+            <div class="tech-group" aria-hidden="true">
+                <div class="tech-item"><i class="devicon-html5-plain colored"></i> HTML5</div>
+                <div class="tech-item"><i class="devicon-css3-plain colored"></i> CSS3</div>
+                <div class="tech-item"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                <div class="tech-item"><i class="devicon-php-plain colored"></i> PHP</div>
+                <div class="tech-item"><i class="devicon-python-plain colored"></i> Python</div>
+                <div class="tech-item"><i class="devicon-csharp-plain colored"></i> C#</div>
+                <div class="tech-item"><i class="devicon-sqldeveloper-plain colored"></i> SQL</div>
+                <div class="tech-item"><i class="devicon-bootstrap-plain colored"></i> Bootstrap</div>
+            </div>
+
+            <div class="tech-group" aria-hidden="true">
+                <div class="tech-item"><i class="devicon-html5-plain colored"></i> HTML5</div>
+                <div class="tech-item"><i class="devicon-css3-plain colored"></i> CSS3</div>
+                <div class="tech-item"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                <div class="tech-item"><i class="devicon-php-plain colored"></i> PHP</div>
+                <div class="tech-item"><i class="devicon-python-plain colored"></i> Python</div>
+                <div class="tech-item"><i class="devicon-csharp-plain colored"></i> C#</div>
+                <div class="tech-item"><i class="devicon-sqldeveloper-plain colored"></i> SQL</div>
+                <div class="tech-item"><i class="devicon-bootstrap-plain colored"></i> Bootstrap</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CERTIFICATES SECTION ==================== -->
+    <section id="sertifikalar" class="section certificates-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Sertifikalarım</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="certificates-grid" id="certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certificate-icon">
+                        <i class="bi bi-patch-check-fill"></i>
+                    </div>
+                    <div class="certificate-body">
+                        <h3 class="certificate-title">"İleri Ağ Teknolojileri</h3>
+                        <p class="certificate-issuer"><i class="bi bi-building"></i> BTK AKADEMİ</p>
+                        <p class="certificate-date"><i class="bi bi-calendar3"></i> Nisan 2026</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <button class="btn btn-cert-view" data-cert-title="İleri Ağ Teknolojileri"
+                            data-cert-issuer="BTK AKADEMİ" data-cert-date="Nisan 2026"
+                            data-cert-pdf="sertifika/sertifika2.pdf" title="Görüntüle">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="certificate-icon">
+                        <i class="bi bi-patch-check-fill"></i>
+                    </div>
+                    <div class="certificate-body">
+                        <h3 class="certificate-title">"3DS Max 2022 Temel Seviye</h3>
+                        <p class="certificate-issuer"><i class="bi bi-building"></i> BTK AKADEMİ</p>
+                        <p class="certificate-date"><i class="bi bi-calendar3"></i> Nisan 2026</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <button class="btn btn-cert-view" data-cert-title="3DS Max 2022 Temel Seviye"
+                            data-cert-issuer="BTK AKADEMİ" data-cert-date="Nisan 2026"
+                            data-cert-pdf="sertifika/sertifika1.pdf" title="Görüntüle">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="certificate-icon">
+                        <i class="bi bi-patch-check-fill"></i>
+                    </div>
+                    <div class="certificate-body">
+                        <h3 class="certificate-title">Python for Data Science</h3>
+                        <p class="certificate-issuer"><i class="bi bi-building"></i> Coursera</p>
+                        <p class="certificate-date"><i class="bi bi-calendar3"></i> Haziran 2025</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <button class="btn btn-cert-view" data-cert-title="Python for Data Science"
+                            data-cert-issuer="Coursera" data-cert-date="Haziran 2025" title="Görüntüle">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="certificate-icon">
+                        <i class="bi bi-patch-check-fill"></i>
+                    </div>
+                    <div class="certificate-body">
+                        <h3 class="certificate-title">React - The Complete Guide</h3>
+                        <p class="certificate-issuer"><i class="bi bi-building"></i> Udemy</p>
+                        <p class="certificate-date"><i class="bi bi-calendar3"></i> Eylül 2025</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <button class="btn btn-cert-view" data-cert-title="React - The Complete Guide"
+                            data-cert-issuer="Udemy" data-cert-date="Eylül 2025" title="Görüntüle">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 5 -->
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="certificate-icon">
+                        <i class="bi bi-patch-check-fill"></i>
+                    </div>
+                    <div class="certificate-body">
+                        <h3 class="certificate-title">AWS Cloud Practitioner</h3>
+                        <p class="certificate-issuer"><i class="bi bi-building"></i> Amazon Web Services</p>
+                        <p class="certificate-date"><i class="bi bi-calendar3"></i> Aralık 2025</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <button class="btn btn-cert-view" data-cert-title="AWS Cloud Practitioner"
+                            data-cert-issuer="Amazon Web Services" data-cert-date="Aralık 2025" title="Görüntüle">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div class="modal fade" id="certificateModal" tabindex="-1" aria-labelledby="certificateModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content certificate-modal-content">
+                <div class="modal-header">
+                    <div class="cert-modal-header-info">
+                        <i class="bi bi-award-fill cert-modal-header-icon"></i>
+                        <div>
+                            <h5 class="modal-title" id="certificateModalLabel">Sertifika Detayı</h5>
+                            <p class="cert-modal-meta">
+                                <span id="modal-cert-issuer-text"></span>
+                                <span class="cert-meta-divider">•</span>
+                                <span id="modal-cert-date-text"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- PDF Ön İzleme Alanı -->
+                    <div id="cert-pdf-preview-wrapper" class="cert-pdf-preview-wrapper d-none">
+                        <iframe id="cert-pdf-iframe" class="cert-pdf-iframe" src="" frameborder="0"></iframe>
+                    </div>
+                    <!-- PDF Yok Mesajı -->
+                    <div id="cert-no-pdf-wrapper" class="cert-no-pdf-wrapper d-none">
+                        <div class="cert-no-pdf-content">
+                            <i class="bi bi-file-earmark-x"></i>
+                            <h4>PDF Bulunamadı</h4>
+                            <p>Bu sertifika için henüz bir PDF dosyası eklenmemiş.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" id="cert-modal-footer">
+                    <a id="modal-cert-download-btn" href="javascript:void(0)" class="btn btn-cert-download d-none">
+                        <i class="bi bi-download"></i> Sertifikayı İndir
+                    </a>
+                    <a id="modal-cert-newtab-btn" href="javascript:void(0)" target="_blank"
+                        class="btn btn-cert-newtab d-none">
+                        <i class="bi bi-box-arrow-up-right"></i> Yeni Sekmede Aç
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="iletisim" class="section contact-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">İletişim</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+                    <div class="contact-info-wrapper">
+                        <h3 class="contact-subtitle">Birlikte çalışalım</h3>
+                        <p class="contact-text">
+                            Bir projeniz mi var? İş birliği yapmak ister misiniz? Bana her zaman ulaşabilirsiniz.
+                            En kısa sürede geri dönüş yapacağım.
+                        </p>
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </div>
+                                <div>
+                                    <span class="contact-info-label">E-posta</span>
+                                    <a href="mailto:osmanoglufurkanhasan@gmail.com" class="contact-info-value">
+                                        osmanoglufurkanhasan@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </div>
+                                <div>
+                                    <span class="contact-info-label">Konum</span>
+                                    <span class="contact-info-value">Türkiye</span>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="bi bi-github"></i>
+                                </div>
+                                <div>
+                                    <span class="contact-info-label">GitHub</span>
+                                    <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                                        class="contact-info-value">github.com/</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-socials">
+                            <a href="https://www.linkedin.com/in/furkanhasanosmanoglu/" target="_blank"
+                                rel="noopener noreferrer" class="social-link" title="LinkedIn" id="contact-linkedin"><i
+                                    class="bi bi-linkedin"></i></a>
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link"
+                                title="GitHub" id="contact-github"><i class="bi bi-github"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link"
+                                title="Twitter" id="contact-twitter"><i class="bi bi-twitter-x"></i></a>
+                            <a href="mailto:osmanoglufurkanhasan@gmail" class="social-link" title="E-posta"
+                                id="contact-email"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+                    <form class="contact-form" id="contact-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating-custom with-icon">
+                                    <i class="bi bi-person input-icon"></i>
+                                    <input type="text" class="form-control" id="contact-name"
+                                        placeholder="Adınız Soyadınız" required>
+                                    <label for="contact-name">Adınız Soyadınız</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating-custom with-icon">
+                                    <i class="bi bi-envelope input-icon"></i>
+                                    <input type="email" class="form-control" id="contact-email-input"
+                                        placeholder="E-posta Adresiniz" required>
+                                    <label for="contact-email-input">E-posta Adresiniz</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating-custom with-icon">
+                                    <i class="bi bi-chat-left-text input-icon"></i>
+                                    <input type="text" class="form-control" id="contact-subject" placeholder="Konu">
+                                    <label for="contact-subject">Konu</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating-custom with-icon">
+                                    <i class="bi bi-pencil input-icon"></i>
+                                    <textarea class="form-control" id="contact-message" placeholder="Mesajınız" rows="5"
+                                        required></textarea>
+                                    <label for="contact-message">Mesajınız</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-submit" id="btn-submit-contact">
+                                    <span class="btn-text">Mesaj Gönder</span>
+                                    <i class="bi bi-send-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer" class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#anasayfa" class="footer-logo">
+                        <span class="logo-bracket">&lt;</span>Furkan Hasan Osmanoğlu<span
+                            class="logo-bracket">/&gt;</span>
+                    </a>
+                    <p class="footer-tagline">Üniversite öğrencisi ve yazılım geliştiriciyim. Modern teknolojilerle
+                        kullanıcı odaklı, performanslı ve ölçeklenebilir uygulamalar geliştiriyorum.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#hakkimda">Hakkımda</a>
+                    <a href="#yetenekler">Yetenekler</a>
+                    <a href="#projeler">Projeler</a>
+                    <a href="#sertifikalar">Sertifikalar</a>
+                    <a href="#iletisim">İletişim</a>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="footer-year"></span> Furkan Hasan Osmanoğlu Tüm hakları saklıdır.</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="btn-back-to-top" id="btn-back-to-top" title="Yukarı Çık" aria-label="Yukarı çık">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="assets/js/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/69de5c966161b11c3321139b/1jm6j0ckt';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+</body>
+
+</html>
