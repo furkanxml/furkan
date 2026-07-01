@@ -533,15 +533,49 @@ img {
         font-size: 1.1rem;
     }
 
-    /* Orijinal Tawk.to baloncuğunu 6. slotun (İletişim) İKON boşluğuna tam oturt */
-    iframe[title="chat widget"] {
-        position: fixed !important;
-        bottom: calc(env(safe-area-inset-bottom, 0px) + 16px) !important;
-        right: calc(8.33% - 25px) !important;
-        transform: scale(0.45) !important; /* Diğer ikonlarla (32px) aynı boyuta getir */
-        transform-origin: center center !important;
-        margin: 0 !important;
-        z-index: 10000 !important;
+    /* Tawk baloncuğunun mobilde bir an görünüp kaybolmasını (flash) engelle:
+       JS gizleyene kadar ilk boyamadan itibaren gizli tut. Tawk kök öğesi
+       <body> altında class'sız, id'li ve iframe içeren tek div'dir (sertifika
+       modalı class'lı olduğu için elenir). Sohbet açılınca JS bunu satır-içi
+       `display:block !important` ile geçersiz kılar (inline important üstündür). */
+    body > div[id]:not([class]):has(iframe) {
+        display: none !important;
+    }
+
+    /* İletişim slotu: <button> öğesini diğer nav ikonlarıyla birebir aynı yap */
+    .mob-nav-chat {
+        -webkit-appearance: none;
+        appearance: none;
+        background: none;
+        border: none;
+        font-family: inherit;
+        cursor: pointer;
+    }
+
+    /* Okunmamış mesaj rozeti (Tawk baloncuğundaki "1" ile aynı görev) */
+    .mob-nav-badge {
+        position: absolute;
+        top: 2px;
+        left: 50%;
+        transform: translateX(6px);
+        min-width: 16px;
+        height: 16px;
+        padding: 0 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.6rem;
+        font-weight: 700;
+        line-height: 1;
+        color: #fff;
+        background: #e0245e;
+        border-radius: 999px;
+        box-shadow: 0 0 0 2px var(--color-bg-navbar);
+        pointer-events: none;
+    }
+
+    .mob-nav-badge[hidden] {
+        display: none;
     }
 }
 

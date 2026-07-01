@@ -89,7 +89,7 @@
     <!-- Devicon Icons -->
     <link rel="stylesheet" type="text/css" href="assets/css/devicon.min.css" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260701">
 </head>
 
 <body>
@@ -167,12 +167,13 @@
             <span class="mob-nav-label">Sertifikalar</span>
             <span class="mob-nav-indicator"></span>
         </a>
-        <!-- Tawk.to Baloncuğu için Yer Tutucu -->
-        <div class="mob-nav-item" style="pointer-events: none;">
-            <span class="mob-nav-icon" style="opacity: 0;"></span>
+        <!-- İletişim: Tawk.to canlı sohbetini açar (diğer ikonlarla aynı stilde) -->
+        <button type="button" class="mob-nav-item mob-nav-chat" id="mob-nav-chat" aria-label="İletişim - Canlı Destek">
+            <span class="mob-nav-icon"><i class="bi bi-chat-dots-fill"></i></span>
             <span class="mob-nav-label">İletişim</span>
+            <span class="mob-nav-badge" id="mob-nav-chat-badge" hidden>1</span>
             <span class="mob-nav-indicator"></span>
-        </div>
+        </button>
     </nav>
 
     <!-- ==================== HERO SECTION ==================== -->
@@ -938,7 +939,7 @@
     <!-- AOS Animation Library -->
     <script src="assets/js/aos.js"></script>
     <!-- Custom JS -->
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js?v=20260701"></script>
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">

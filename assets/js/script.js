@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initAOS();
     initTiltEffect();
+    initTawkChat();
     setFooterYear();
 });
 
@@ -489,6 +490,132 @@ function initAOS() {
             offset: 80,
             disable: 'mobile'
         });
+    }
+}
+
+/* ============================================
+   TAWK.TO CANLI SOHBET (Mobil nav entegrasyonu)
+   ============================================ */
+
+function initTawkChat() {
+    const chatBtn = document.getElementById('mob-nav-chat');
+    const badge = document.getElementById('mob-nav-chat-badge');
+    const mobileMq = window.matchMedia('(max-width: 991.98px)');
+
+    // Tawk global nesnesi Tawk betiğinden önce hazır olabilsin diye garanti altına al
+    window.Tawk_API = window.Tawk_API || {};
+
+    // Sohbet PENCERESİ (maximized) açık mı? Baloncuk durumu bununla belirlenir.
+    let chatOpen = false;
+
+    // Tawk kök sarmalayıcısı: <body> altında, class'sız, id'li ve içinde iframe
+    // barındıran tek div. (Sertifika modalı class'lı olduğu için elenir.)
+    // NOT: position kontrolü yok — Tawk konumu iframe'den sonra kurduğu için
+    // beklersek baloncuk bir an görünebilir; erken yakalayıp flash'ı önlüyoruz.
+    function tawkWrapper() {
+        return [...document.body.children].find((el) =>
+            el.tagName === 'DIV' &&
+            !el.className &&
+            el.id &&
+            el.querySelector('iframe')
+        ) || null;
+    }
+
+    // Tawk baloncuğu tekrar göstermeye çalışırsa (stil değişimi) anında geri al.
+    let styleObserverAttached = false;
+    const styleObserver = new MutationObserver(() => enforce());
+
+    // Sarmalayıcı DOM'a eklendiğinde stil observer'ını bir kez bağla.
+    function ensureAttached() {
+        const wrap = tawkWrapper();
+        if (wrap && !styleObserverAttached) {
+            styleObserver.observe(wrap, { attributes: true, attributeFilter: ['style'] });
+            styleObserverAttached = true;
+        }
+        return wrap;
+    }
+
+    // Mobilde ve sohbet penceresi kapalıyken Tawk arayüzünü (baloncuk dahil)
+    // gizli tut; aksi halde Tawk'ın kendi görünürlüğüne dokunma.
+    function enforce() {
+        const wrap = ensureAttached();
+        if (!wrap) return;
+        const shouldHide = mobileMq.matches && !chatOpen;
+        const isHidden = wrap.style.getPropertyValue('display') === 'none';
+        if (shouldHide) {
+            if (!isHidden) wrap.style.setProperty('display', 'none', 'important');
+        } else {
+            if (isHidden) wrap.style.setProperty('display', 'block', 'important');
+        }
+    }
+
+    // FLASH ÖNLEME: Tawk sarmalayıcıyı <body>'ye ekleyip iframe'ini hemen ardından
+    // koyar. subtree izlemesiyle iframe eklenir eklenmez (mikro-görev hızında)
+    // gizleriz; böylece baloncuk hiç görünmez. :has() desteğinden bağımsızdır.
+    const bodyObserver = new MutationObserver(() => {
+        enforce();
+        if (styleObserverAttached) bodyObserver.disconnect();
+    });
+    bodyObserver.observe(document.body, { childList: true, subtree: true });
+
+    // Observer'ı kaçıran uç durumlar için kısa yoklama yedeği.
+    let pollCount = 0;
+    const pollTimer = setInterval(() => {
+        enforce();
+        if (styleObserverAttached || ++pollCount > 100) clearInterval(pollTimer);
+    }, 100);
+
+    // Tawk tam yüklendiğinde de uygula
+    window.Tawk_API.onLoad = function () {
+        enforce();
+    };
+
+    // Sohbet penceresi durumunu takip et
+    window.Tawk_API.onChatMaximized = function () {
+        chatOpen = true;
+        enforce();
+    };
+    window.Tawk_API.onChatMinimized = function () {
+        chatOpen = false;
+        enforce();
+    };
+    window.Tawk_API.onChatHidden = function () {
+        chatOpen = false;
+        enforce();
+    };
+
+    // Okunmamış mesaj sayısını nav ikonundaki rozete yansıt
+    window.Tawk_API.onUnreadCountChanged = function (count) {
+        if (!badge) return;
+        const n = Number(count) || 0;
+        if (n > 0) {
+            badge.textContent = n > 9 ? '9+' : String(n);
+            badge.hidden = false;
+        } else {
+            badge.hidden = true;
+        }
+    };
+
+    // Nav ikonuna tıklayınca sohbeti aç/kapat
+    if (chatBtn) {
+        chatBtn.addEventListener('click', () => {
+            const api = window.Tawk_API;
+            if (!api) return;
+            if (chatOpen) {
+                if (typeof api.minimize === 'function') api.minimize();
+            } else {
+                chatOpen = true; // observer'ın pencereyi engellememesi için önce izin ver
+                enforce();
+                if (typeof api.maximize === 'function') api.maximize();
+            }
+        });
+    }
+
+    // Ekran boyutu değişiminde durumu güncelle
+    if (typeof mobileMq.addEventListener === 'function') {
+        mobileMq.addEventListener('change', enforce);
+    } else if (typeof mobileMq.addListener === 'function') {
+        mobileMq.addListener(enforce);
     }
 }
 
