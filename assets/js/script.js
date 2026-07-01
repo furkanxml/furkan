@@ -88,10 +88,10 @@ function initPlaceholderLinks() {
 
 function initNavbar() {
     const navbar = document.getElementById('navbar');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const desktopNavLinks = document.querySelectorAll('.nav-links-wrapper .nav-link');
+    const mobileNavItems = document.querySelectorAll('.mob-nav-item');
     const sections = document.querySelectorAll('section[id]');
 
-    // Scroll effect
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -99,7 +99,6 @@ function initNavbar() {
             navbar.classList.remove('scrolled');
         }
 
-        // Active section highlighting
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 150;
@@ -109,10 +108,17 @@ function initNavbar() {
             }
         });
 
-        navLinks.forEach(link => {
+        desktopNavLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
                 link.classList.add('active');
+            }
+        });
+
+        mobileNavItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === `#${current}`) {
+                item.classList.add('active');
             }
         });
     });
@@ -456,15 +462,9 @@ function initSmoothScroll() {
             e.preventDefault();
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                // Header yüksekliği
                 const headerHeight = document.getElementById('main-header').offsetHeight || 90;
-                
-                // .section 클래ı içindeki padding'i (yaklaşık 100px) aşmak için offset ekliyoruz
-                // Bunu +80 gibi pozitif bir değer yaparak sayfanın DAHa aşağı kaymasını sağlıyoruz
-                const offset = 80; 
-                
+                const offset = 80;
                 const elementPosition = targetElement.getBoundingClientRect().top;
-                // Sayfayı 'headerHeight' kadar yukarıda değil, ona ek olarak +80px daha aşağıda (fazladan boşluğu yutacak şekilde) durduruyoruz
                 const offsetPosition = elementPosition + window.pageYOffset - headerHeight + offset;
 
                 window.scrollTo({
@@ -513,43 +513,30 @@ function initTiltEffect() {
     const heroContent = document.querySelector('.hero-content');
 
     if (!heroSection || !codeWindow || !heroContent) return;
-
-    // Cihaz mobil mi kontrol et
     if (window.matchMedia("(max-width: 991px)").matches) return;
 
-    // Derinlik hissiyatı için preserve-3d etkinliği
     heroContent.style.transformStyle = 'preserve-3d';
-
     const maxRotation = 15;
 
-    // Tüm hero bölümünü (tavan/taban sınırı olmaksızın devasa bir alan) dinliyoruz
     heroSection.addEventListener('mousemove', (e) => {
         const rect = heroSection.getBoundingClientRect();
-        
-        // Farenin Hero Section'a göre pozisyonları
-        const x = e.clientX - rect.left; 
-        const y = e.clientY - rect.top; 
-        
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
         const width = rect.width;
         const height = rect.height;
 
-        // Farenin Y eksenindeki genel sapma oranı
         const centerY = height / 2;
         const percentY = (y - centerY) / centerY;
 
-        // "ÖLÜ BÖLGE" HESAPLAMALARI
-        // Üstten %15, alttan %15 ve ortadan %10'luk bir hareket etmeme bölgesi (dead zone) yaratıyoruz.
         const topBound = height * 0.15;
         const bottomBound = height * 0.85;
-        const leftZoneEnd = width * 0.45;    // Ekranın %45'ine kadar sol alan
-        const rightZoneStart = width * 0.55; // Ekranın %55'inden sonra sağ alan
+        const leftZoneEnd = width * 0.45;
+        const rightZoneStart = width * 0.55;
 
         let isLeftActive = false;
         let isRightActive = false;
 
-        // Eğer fare dikeyde izin verilen (daraltılmış) sınırlar içindeyse
         if (y > topBound && y < bottomBound) {
-            // Ve yatayda sağa/sola çok yakınsa
             if (x < leftZoneEnd) {
                 isLeftActive = true;
             } else if (x > rightZoneStart) {
@@ -557,11 +544,9 @@ function initTiltEffect() {
             }
         }
 
-        // SOL TARAF (Metin Pop-Out) Hareketi
         if (isLeftActive) {
             const leftCenterX = leftZoneEnd / 2;
             const percentX = (x - leftCenterX) / leftCenterX;
-
             const rotateX = -percentY * maxRotation;
             const rotateY = percentX * maxRotation;
 
@@ -569,7 +554,6 @@ function initTiltEffect() {
             heroContent.style.transition = 'transform 0.1s ease-out';
             heroContent.classList.add('is-tilted');
         } else {
-            // Sol alandan çıkıldığında durdur
             if (heroContent.classList.contains('is-tilted')) {
                 heroContent.style.transform = '';
                 heroContent.style.transition = 'transform 0.5s ease-out';
@@ -577,11 +561,9 @@ function initTiltEffect() {
             }
         }
 
-        // SAĞ TARAF (Kod Penceresi) Hareketi
         if (isRightActive) {
             const rightCenterX = rightZoneStart + ((width - rightZoneStart) / 2);
             const percentX = (x - rightCenterX) / ((width - rightZoneStart) / 2);
-
             const rotateX = -percentY * maxRotation;
             const rotateY = percentX * maxRotation;
 
@@ -589,7 +571,6 @@ function initTiltEffect() {
             codeWindow.style.transition = 'transform 0.1s ease-out';
             codeWindow.classList.add('is-tilted');
         } else {
-            // Sağ alandan çıkıldığında durdur
             if (codeWindow.classList.contains('is-tilted')) {
                 codeWindow.style.transform = '';
                 codeWindow.style.transition = 'transform 0.5s ease-out';
@@ -598,16 +579,14 @@ function initTiltEffect() {
         }
     });
 
-    // Ana alandan tamamen çıkıldığında her ikisini de sıfırla
     heroSection.addEventListener('mouseleave', () => {
         codeWindow.style.transform = '';
         codeWindow.style.transition = 'transform 0.5s ease-out';
         codeWindow.classList.remove('is-tilted');
-        
+
         heroContent.style.transform = '';
         heroContent.style.transition = 'transform 0.5s ease-out';
         heroContent.classList.remove('is-tilted');
     });
-
 }
 
