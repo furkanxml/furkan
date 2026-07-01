@@ -533,10 +533,14 @@ img {
         font-size: 1.1rem;
     }
 
-    /* Tawk.to baloncuğunu mobilde nav bar içine sığdır */
-    iframe[title="chat widget"] {
-        transform: scale(0.85) !important;
-        transform-origin: bottom right !important;
+    /* Tawk.to baloncuğunu mobilde nav bar içindeki 6. slotun (İletişim) merkezine hizala */
+    iframe[title="chat widget"],
+    .tawk-min-container,
+    div[id^="tawk-"] {
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 12px) !important;
+        right: calc(8.33% - 30px) !important;
+        transform: scale(0.75) !important;
+        transform-origin: center !important;
     }
 }
 
