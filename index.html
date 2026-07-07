@@ -21,6 +21,10 @@
 
     <link rel="preconnect" href="https://embed.tawk.to">
     <link rel="dns-prefetch" href="https://embed.tawk.to">
+    <link rel="preconnect" href="https://api.iconify.design" crossorigin>
+    <link rel="dns-prefetch" href="https://api.iconify.design">
+    <link rel="preconnect" href="https://cdn.worldvectorlogo.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.worldvectorlogo.com">
 
     <!-- Temel SEO Etiketleri -->
     <meta name="description"
@@ -38,7 +42,11 @@
     <meta property="og:title" content="Furkan Hasan Osmanoğlu | Portfolyo - Yazılım Geliştirici">
     <meta property="og:description"
         content="Yazılım Geliştirici Furkan Hasan Osmanoğlu'nun kişisel portfolyo sitesi. Projeler, yetenekler ve deneyimler.">
-    <meta property="og:image" content="https://furkanhasan.com/image/furkanhasan.png">
+    <meta property="og:image" content="https://furkanhasan.com/image/furkanhasan-og.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1600">
+    <meta property="og:image:alt" content="Furkan Hasan Osmanoğlu">
     <meta property="og:site_name" content="Furkan Hasan Osmanoğlu Portfolyo">
     <meta property="og:locale" content="tr_TR">
 
@@ -47,7 +55,8 @@
     <meta name="twitter:title" content="Furkan Hasan Osmanoğlu | Portfolyo - Yazılım Geliştirici">
     <meta name="twitter:description"
         content="Yazılım Geliştirici Furkan Hasan Osmanoğlu'nun kişisel portfolyo sitesi. Projeler, yetenekler ve deneyimler.">
-    <meta name="twitter:image" content="https://furkanhasan.com/image/furkanhasan.png">
+    <meta name="twitter:image" content="https://furkanhasan.com/image/furkanhasan-og.jpg">
+    <meta name="twitter:image:alt" content="Furkan Hasan Osmanoğlu">
 
     <!-- Yapısal Veri (Google'da zengin sonuçlar için JSON-LD) -->
     <script type="application/ld+json">
@@ -58,10 +67,11 @@
       "jobTitle": "Yazılım Geliştirici",
       "description": "Yazılım Geliştirici Furkan Hasan Osmanoğlu'nun kişisel portfolyo sitesi.",
       "url": "https://furkanhasan.com",
+      "image": "https://furkanhasan.com/image/furkanhasan-og.jpg",
       "knowsAbout": ["Web Geliştirme", "Yazılım Mühendisliği"],
       "sameAs": [
-        "https://linkedin.com/in/furkanhasanosmanoglu",
-        "https://github.com/"
+        "https://www.linkedin.com/in/furkanhasanosmanoglu/",
+        "https://instagram.com/furkanhasan_"
       ]
     }
     </script>
@@ -76,8 +86,15 @@
         gtag('config', 'G-8FVFVPS6N0');
     </script>
 
-    <!-- Favicon -->
-    <link rel="icon" href="image/furkanhasan.ico" type="image/svg+xml">
+    <!-- Favicon & PWA -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#2563eb">
     <!-- Bootstrap 5 CSS -->
     <link href="assets/css/odlmin.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -197,7 +214,7 @@
                             <span class="typing-cursor">|</span>
                         </div>
                         <p class="hero-description">
-                            Üniversite öğrencisi ve yazılım geliştiriciyim. Modern teknolojilerle
+                            Yazılım geliştiriciyim. Modern teknolojilerle
                             kullanıcı odaklı, performanslı ve ölçeklenebilir uygulamalar geliştiriyorum.
                         </p>
                         <div class="hero-cta">
@@ -235,7 +252,6 @@
                                 <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
   <span class="code-property">ad</span>: <span class="code-string">"Furkan Hasan Osmanoğlu"</span>,
   <span class="code-property">rol</span>: <span class="code-string">"Programmer"</span>,
-  <span class="code-property">universite</span>: <span class="code-string">"Selçuk Üniversitesi"</span>,
   <span class="code-property">teknolojiler</span>: [
     <span class="code-string">"JavaScript"</span>, <span class="code-string">"Python"</span>,
     <span class="code-string">"PHP"</span>, <span class="code-string">"CSS"</span>
@@ -276,17 +292,17 @@
                 <div class="col-lg-5">
                     <div class="about-image-wrapper">
                         <div class="about-image-frame">
-                            <img src="image/furkanhasan.png" alt="Hakkımda Fotoğraf" class="about-photo">
+                            <img src="image/furkanhasan.webp" alt="Furkan Hasan Osmanoğlu portre fotoğrafı"
+                                class="about-photo" width="1080" height="1440" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="about-content">
-                        <h3 class="about-subtitle">Yazılım Geliştirici & Üniversite Öğrencisi</h3>
+                        <h3 class="about-subtitle">Yazılım Geliştirici</h3>
                         <p class="about-text">
-                            Merhaba, Selçuk Üniversites Bilgisayar Programcılığı bölümünde aktif öğreciyim. Teknolojiye
-                            olan tutkum sayesinde
-                            kendimi sürekli geliştiriyorum. Web geliştirme, veritabanı yönetimi ve daha fazla
+                            Merhaba, teknolojiye olan tutkum sayesinde
+                            kendimi sürekli geliştiren bir yazılım geliştiriciyim. Web geliştirme, veritabanı yönetimi ve daha fazla
                             alanlarda projeler üretiyorum.
                         </p>
                         <p class="about-text">
@@ -423,7 +439,7 @@
                         <div class="skill-hex-card">
                             <div class="skill-hex-glow"></div>
                             <div class="skill-hex-icon">
-                                <img src="https://api.iconify.design/logos:adobe-photoshop.svg" alt="Photoshop"
+                                <img loading="lazy" decoding="async" src="https://api.iconify.design/logos:adobe-photoshop.svg" alt="Photoshop"
                                     style="width: 38px; height: 38px;">
                             </div>
                             <span class="skill-hex-name">Photoshop</span>
@@ -431,7 +447,7 @@
                         <div class="skill-hex-card">
                             <div class="skill-hex-glow"></div>
                             <div class="skill-hex-icon">
-                                <img src="https://api.iconify.design/logos:adobe-premiere.svg" alt="Premiere Pro"
+                                <img loading="lazy" decoding="async" src="https://api.iconify.design/logos:adobe-premiere.svg" alt="Premiere Pro"
                                     style="width: 38px; height: 38px;">
                             </div>
                             <span class="skill-hex-name">Premiere Pro</span>
@@ -439,7 +455,7 @@
                         <div class="skill-hex-card">
                             <div class="skill-hex-glow"></div>
                             <div class="skill-hex-icon">
-                                <img src="https://api.iconify.design/logos:adobe-after-effects.svg" alt="After Effects"
+                                <img loading="lazy" decoding="async" src="https://api.iconify.design/logos:adobe-after-effects.svg" alt="After Effects"
                                     style="width: 38px; height: 38px;">
                             </div>
                             <span class="skill-hex-name">After Effects</span>
@@ -447,7 +463,7 @@
                         <div class="skill-hex-card">
                             <div class="skill-hex-glow"></div>
                             <div class="skill-hex-icon">
-                                <img src="https://cdn.worldvectorlogo.com/logos/3ds-max.svg" alt="3ds Max"
+                                <img loading="lazy" decoding="async" src="https://cdn.worldvectorlogo.com/logos/3ds-max.svg" alt="3ds Max"
                                     style="width: 38px; height: 38px;">
                             </div>
                             <span class="skill-hex-name">3ds Max</span>
@@ -467,7 +483,7 @@
                         <div class="skill-hex-card">
                             <div class="skill-hex-glow"></div>
                             <div class="skill-hex-icon">
-                                <img src="https://api.iconify.design/logos:wordpress-icon.svg" alt="WordPress"
+                                <img loading="lazy" decoding="async" src="https://api.iconify.design/logos:wordpress-icon.svg" alt="WordPress"
                                     style="width: 38px; height: 38px;">
                             </div>
                             <span class="skill-hex-name">WordPress</span>
@@ -475,7 +491,7 @@
                         <div class="skill-hex-card">
                             <div class="skill-hex-glow"></div>
                             <div class="skill-hex-icon">
-                                <img src="https://api.iconify.design/logos:opencart.svg" alt="OpenCart"
+                                <img loading="lazy" decoding="async" src="https://api.iconify.design/logos:opencart.svg" alt="OpenCart"
                                     style="width: 38px; height: 38px;">
                             </div>
                             <span class="skill-hex-name">OpenCart</span>
@@ -483,7 +499,7 @@
                         <div class="skill-hex-card">
                             <div class="skill-hex-glow"></div>
                             <div class="skill-hex-icon">
-                                <img src="https://api.iconify.design/logos:joomla.svg" alt="Joomla"
+                                <img loading="lazy" decoding="async" src="https://api.iconify.design/logos:joomla.svg" alt="Joomla"
                                     style="width: 38px; height: 38px;">
                             </div>
                             <span class="skill-hex-name">Joomla</span>
@@ -491,7 +507,7 @@
                         <div class="skill-hex-card">
                             <div class="skill-hex-glow"></div>
                             <div class="skill-hex-icon">
-                                <img src="https://api.iconify.design/logos:drupal-icon.svg" alt="Drupal"
+                                <img loading="lazy" decoding="async" src="https://api.iconify.design/logos:drupal-icon.svg" alt="Drupal"
                                     style="width: 38px; height: 38px;">
                             </div>
                             <span class="skill-hex-name">Drupal</span>
@@ -525,8 +541,8 @@
                 <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card-inner">
                         <div class="project-image">
-                            <img src="image/avukatsitesi.png" alt="Avukat web sitesi proje gorseli"
-                                class="project-photo" loading="lazy">
+                            <img src="image/avukatsitesi.webp" alt="Avukat web sitesi proje gorseli"
+                                class="project-photo" width="800" height="384" loading="lazy" decoding="async">
                             <div class="project-overlay">
                                 <a href="https://245403024.infinityfreeapp.com/" class="project-link" target="_blank"
                                     title="Canlı Demo"><i class="bi bi-box-arrow-up-right"></i></a>
@@ -549,8 +565,8 @@
                 <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card-inner">
                         <div class="project-image">
-                            <img src="image/veritasaruf.png" alt="Gorev yonetim uygulamasi proje gorseli"
-                                class="project-photo" loading="lazy">
+                            <img src="image/veritasaruf.webp" alt="Gorev yonetim uygulamasi proje gorseli"
+                                class="project-photo" width="800" height="384" loading="lazy" decoding="async">
                             <div class="project-overlay">
                                 <a href="#" class="project-link" title="Canlı Demo"><i
                                         class="bi bi-box-arrow-up-right"></i></a>
@@ -573,8 +589,8 @@
                 <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card-inner">
                         <div class="project-image">
-                            <img src="image/kuafor.png" alt="Hava durumu uygulamasi proje gorseli" class="project-photo"
-                                loading="lazy">
+                            <img src="image/kuafor.webp" alt="Hava durumu uygulamasi proje gorseli" class="project-photo"
+                                width="800" height="353" loading="lazy" decoding="async">
                             <div class="project-overlay">
                                 <a href="#" class="project-link" title="Canlı Demo"><i
                                         class="bi bi-box-arrow-up-right"></i></a>
@@ -910,7 +926,7 @@
                         <span class="logo-bracket">&lt;</span>Furkan Hasan Osmanoğlu<span
                             class="logo-bracket">/&gt;</span>
                     </a>
-                    <p class="footer-tagline">Üniversite öğrencisi ve yazılım geliştiriciyim. Modern teknolojilerle
+                    <p class="footer-tagline">Yazılım geliştiriciyim. Modern teknolojilerle
                         kullanıcı odaklı, performanslı ve ölçeklenebilir uygulamalar geliştiriyorum.</p>
                 </div>
                 <div class="footer-links">
@@ -935,11 +951,11 @@
     </button>
 
     <!-- Bootstrap 5 JS -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script defer src="assets/js/bootstrap.bundle.min.js"></script>
     <!-- AOS Animation Library -->
-    <script src="assets/js/aos.js"></script>
+    <script defer src="assets/js/aos.js"></script>
     <!-- Custom JS -->
-    <script src="assets/js/script.js?v=20260701"></script>
+    <script defer src="assets/js/script.js?v=20260701"></script>
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
